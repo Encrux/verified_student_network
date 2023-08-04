@@ -1,11 +1,27 @@
 import 'dart:convert';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:verified_student_network/presentation/post.dart';
-import 'package:verified_student_network/presentation/post_list.dart';
+import 'package:verified_student_network/presentation/post_widget.dart';
+import 'package:verified_student_network/presentation/post_list_widget.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(const MyApp());
+import 'api/api.dart';
+import 'api/api_test.dart';
+import 'firebase_options.dart';
+import 'model/feed.dart';
+
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  TestApi.write();
+  PostDatabase.getPosts().then((value) => print(value));
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<PostWidget>>(
-      future: Future.delayed(const Duration(seconds: 5), () => parseDbgJson()),
+      future: Future.delayed(const Duration(seconds: 1), () => parseDbgJson()),
       builder: (context, snapshot) {
           return MaterialApp(
             title: 'Infinite Scroll Pagination Sample',
@@ -36,10 +52,12 @@ class MyApp extends StatelessWidget {
 
   Future<List<PostWidget>> parseDbgJson() async {
     final json = await rootBundle.loadString('assets/sample.json');
-    final jsonArray = jsonDecode(json) as List<dynamic>;
+    final jsonArray = jsonDecode(json)['posts'] as List<dynamic>;
     return jsonArray.map((jsonObject) => PostWidget(
-      title: jsonObject['title'],
-      content: jsonObject['content'],
+      post: Post(
+        title: jsonObject['title'],
+        content: jsonObject['content'],
+        )
     )).toList();
   }
 

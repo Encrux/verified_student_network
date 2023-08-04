@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PostWidget extends StatelessWidget {
-  final String title;
-  final String content;
+import '../model/feed.dart';
 
-  const PostWidget({super.key, required this.title, required this.content});
+class PostWidget extends StatelessWidget {
+  final Post post;
+
+  const PostWidget({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class PostWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            title,
+            post.title,
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18.0,
@@ -22,7 +23,7 @@ class PostWidget extends StatelessWidget {
           ),
           const SizedBox(height: 8.0),
           Text(
-            content,
+            post.content,
             style: const TextStyle(fontSize: 16.0),
           ),
         ],

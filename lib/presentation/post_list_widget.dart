@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:verified_student_network/presentation/post.dart';
+import 'package:verified_student_network/presentation/post_widget.dart';
 
 class PostListScreen extends StatefulWidget {
   final int postsPerPage;
@@ -12,10 +12,10 @@ class PostListScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _PostListScreenState createState() => _PostListScreenState();
+  PostListScreenState createState() => PostListScreenState();
 }
 
-class _PostListScreenState extends State<PostListScreen> {
+class PostListScreenState extends State<PostListScreen> {
   final ScrollController _scrollController = ScrollController();
   final List<PostWidget> _posts = [];
   bool _isLoading = false;
@@ -35,7 +35,7 @@ class _PostListScreenState extends State<PostListScreen> {
   }
 
   void _onScroll() {
-    if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
+    if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent) {
       _loadMorePosts();
     }
   }
@@ -74,10 +74,7 @@ class _PostListScreenState extends State<PostListScreen> {
             );
           }
           final post = _posts[index];
-          return PostWidget(
-            title: post.title,
-            content: post.content,
-          );
+          return post;
         },
       ),
     );

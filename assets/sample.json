@@ -1,4 +1,4 @@
-[
+{"posts": [
   {
     "title": "The Best Pizza in Town",
     "content": "If you're looking for the best pizza in town, look no further than Pizza Palace! Our delicious pies are made fresh daily with the finest ingredients. Come and see for yourself!",
@@ -224,3 +224,4 @@
     "timestamp": "2022-03-04T21:00:00Z"
     }
 ]
+}
