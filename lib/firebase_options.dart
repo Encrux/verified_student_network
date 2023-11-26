@@ -44,44 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBUvJGHeLmGQQyRL62gpLh-lClxc-whVYo',
-    appId: '1:280964607056:web:4fa176fb5f9ca049c6b555',
-    messagingSenderId: '280964607056',
-    projectId: 'verified-student-network',
-    authDomain: 'verified-student-network.firebaseapp.com',
-    databaseURL: 'https://verified-student-network-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'verified-student-network.appspot.com',
-    measurementId: 'G-NWFDJ7EJCM',
+    apiKey: 'AIzaSyCVXMkNGsM-VOh_vrvqrkzhzbqTpyGjlO8',
+    appId: '1:748356573080:web:c9830dd5810f925166fded',
+    messagingSenderId: '748356573080',
+    projectId: 'verified-student-network-155e2',
+    authDomain: 'verified-student-network-155e2.firebaseapp.com',
+    storageBucket: 'verified-student-network-155e2.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAmyDEKGZEbKd3B_aOlCfWSj_joApYRvaY',
-    appId: '1:280964607056:android:bf89b66195fd1d95c6b555',
-    messagingSenderId: '280964607056',
-    projectId: 'verified-student-network',
-    databaseURL: 'https://verified-student-network-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'verified-student-network.appspot.com',
+    apiKey: 'AIzaSyB-T-BwccMfXgohff8w-yBkghD5Byv5jUk',
+    appId: '1:748356573080:android:e63b50bd482006a166fded',
+    messagingSenderId: '748356573080',
+    projectId: 'verified-student-network-155e2',
+    storageBucket: 'verified-student-network-155e2.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAAreR9EX3sHSzaQo1nGFygMxMVgMVETkI',
-    appId: '1:280964607056:ios:120e7b2bee8f8305c6b555',
-    messagingSenderId: '280964607056',
-    projectId: 'verified-student-network',
-    databaseURL: 'https://verified-student-network-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'verified-student-network.appspot.com',
-    iosClientId: '280964607056-mkmvhq4275h529s792cl0kg1aqju7avn.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDzsVqOPv0zrlq0ouOHIsVzjxPACMmoTaw',
+    appId: '1:748356573080:ios:c0e84f35fdaef47866fded',
+    messagingSenderId: '748356573080',
+    projectId: 'verified-student-network-155e2',
+    storageBucket: 'verified-student-network-155e2.appspot.com',
     iosBundleId: 'com.example.verifiedStudentNetwork',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAAreR9EX3sHSzaQo1nGFygMxMVgMVETkI',
-    appId: '1:280964607056:ios:120e7b2bee8f8305c6b555',
-    messagingSenderId: '280964607056',
-    projectId: 'verified-student-network',
-    databaseURL: 'https://verified-student-network-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'verified-student-network.appspot.com',
-    iosClientId: '280964607056-mkmvhq4275h529s792cl0kg1aqju7avn.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDzsVqOPv0zrlq0ouOHIsVzjxPACMmoTaw',
+    appId: '1:748356573080:ios:c0e84f35fdaef47866fded',
+    messagingSenderId: '748356573080',
+    projectId: 'verified-student-network-155e2',
+    storageBucket: 'verified-student-network-155e2.appspot.com',
     iosBundleId: 'com.example.verifiedStudentNetwork',
   );
 }

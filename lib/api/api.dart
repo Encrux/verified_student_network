@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../model/feed.dart';
@@ -17,8 +15,14 @@ class PostDatabase {
       posts.add(Post(
         title: doc['title'],
         content: doc['content'],
+        timestamp: doc['timestamp'],
       ));
     }
     return posts;
+  }
+
+  static Future<void> createPost(Post post) async {
+    CollectionReference postsRef = FirebaseFirestore.instance.collection('posts');
+    postsRef.add(post.toJson());
   }
 }

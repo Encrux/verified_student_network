@@ -3,9 +3,23 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class TestApi {
 
 
-  static void write() {
+  static Future<void> write() async {
     final db = FirebaseFirestore.instance;
+
+    print("testdata");
+    QuerySnapshot snapshot = await db.collection('posts').get();
+    snapshot.docs.forEach((doc) {
+      print(doc.data());
+    });
+
+    print("write");
+
+
     final cities = db.collection("cities");
+    cities.add({
+      "name": "Tokyo",
+      "country": "Japan"
+    });
     final data1 = <String, dynamic>{
       "name": "San Francisco",
       "state": "CA",
@@ -54,6 +68,11 @@ class TestApi {
       "population": 21500000,
       "regions": ["jingjinji", "hebei"],
     };
-    cities.doc("BJ").set(data5);
+
+    try {
+      await cities.doc("BJ").set(data5);
+    } catch (e) {
+      print(e);
+    }
   }
 }
